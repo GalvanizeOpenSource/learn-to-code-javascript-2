@@ -1,0 +1,88 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+</head>
+<title>
+  Learn to Code: Create a Story in JavaScript
+</title>
+<body class="fell-english">
+  <header class="row">
+    <div class="container">
+      <h1>The Greatest Story Ever Told!</h1>
+      <h2>A Quick Lesson in JavaScript</h2>
+    </div>
+  </header>
+
+  <div id="intro">
+    <div class="container">
+      <p>
+        You begin your quest a new arrival in the village of Blackstone. A YOUNG LAD with a large satchel of GOLD and flask of some unknown POTION looks up to you and asks:
+      </p>
+      <p>
+        "Hello, there! Would you like to try my potion? You won't regret it!"
+      </p>
+      <p>
+        Do you TAKE GOLD or DRINK POTION?
+      </p>
+    </div>
+
+    <div class="container">
+      <input size="50" placeholder="Type 'TAKE GOLD' or 'DRINK POTION'. Case sensitive!" id="response" />
+      <button  onclick="goldOrPotion()">Submit</button>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <div id="gold" class="hidden">
+    <div class="container text-background">
+      <p>
+        You take the GOLD, but the YOUNG LAD'S eyes turn completely black. He roars and transforms into a gigantic dragon and belches a ball of fire into the air.
+      </p>
+      <p>
+        You promptly went your pants. Before you can respond or even react, he lunges down at you and bites your head off.
+      </p>
+      <p>
+        You are dead.
+      </p>
+      <p>
+        Would you like to play again? Refresh the browser!
+      </p>
+    </div>
+  </div>
+
+  <div id="potion" class="hidden">
+    <div class="container text-background">
+      <p>
+        You drank the potion. A strange feeling erupts in your belly. You begin to swell to the size of a windmill, crushing everything and everyone in your path.
+      </p>
+      <p>
+        Once your body presses against a sharp steeple, you explode, showering the town of Blackstone with bits of yourself to the horror of absolutely no one, for they were all crushed by your girth.
+      </p>
+      <p>
+        You are dead.
+      </p>
+      <p>
+        Would you like to play again? Refresh the browser!
+      </p>
+    </div>
+  </div>
+
+  <footer class="row">
+    <div class="container">
+      <div>
+        Brought to by <a href="https://galvanize.com"> Galvanize</a>. Originally written by <a href="https://github.com/lee-ngo">Lee Ngo</a>.
+      </div>
+      <div>
+        Feel free to share and enjoy as you please!
+      </div>
+      <div>
+        Find more lessons at the <a href="https://github.com/GalvanizeOpenSource">Galvanize Open Source</a> project.
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="custom.js">
+  </script>
+</body>
+
+</html>

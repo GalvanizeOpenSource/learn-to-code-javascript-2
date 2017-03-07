@@ -1,0 +1,73 @@
+/* class atrtibutes for header element */
+header {
+  padding-top:30px;
+  padding-bottom:20px;
+  background-color: #52240D;
+  margin-bottom: 50px;
+}
+
+/* container class to make this neat */
+.container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+/* row class to straighten out classes */
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* attributes for footer element */
+footer {
+  background-color: red;
+  left:0px;
+  bottom:0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 30px;
+}
+
+/* makes block of code hidden */
+.hidden {
+  display:none;
+}
+
+/* body class for Fell English font */
+body.fell-english {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* attributes for button element */
+button {
+  color: #000000; /* to override white font color in the boddy */
+  padding: 5px 10px 5px 10px;
+  height:30px;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  margin: 15px;
+}
+
+/* input field styles */
+input {
+  color: #000000;
+  height: 30px;
+}
+
+/* added image styles */
+img {
+  width: 400px;
+  height: 300px;
+  float:left;
+  margin-right: 10px;
+}
+
+/* modifying anchor link color */
+a {
+  color: yellow;
+}
