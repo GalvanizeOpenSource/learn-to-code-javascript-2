@@ -174,25 +174,25 @@ _Is there any other way to do this?_
 
 ## LET'S CODE
 
-Time for us to make our *Choose Your Own Adventure* application!
+Time for us to make our *Choose Your Own Adventure* application (it's going to be very basic)!
 
 1. Go to: https://github.com/GalvanizeOpenSource/Learn-To-Code-JavaScript-2/
 2. Download the zip file of our code
 3. Open the files in your text editor
 	a. index.html
-	b. CSS/style.css
-  c. JS/javascript.js
-6. Open the index.html file in your web browser
+	b. styles.css
+  	c. custom.js
+4. Open the index.html file in your web browser
 
 #### 4 Steps To Building This App
 
 1. Start with an initial prompt
 2. Create two possibilities for responding to that prompt
-3. Connect everything via code (HTML, CSS, JS)
+3. Connect everything to your HTML & CSS!
 4. Test it out and see if it works
 
 
-###### 1. Get the user's choice
+###### 1. Start with an initial prompt
 
 **Assign a `prompt` method to the variable `userChoice`:**
 The ```prompt``` method gets input from the user, ```prompt``` has an optional message parameter which you can use to ask the user for a response.
@@ -206,7 +206,7 @@ This line creates a variable called ```userChoice``` to represent the users resp
 Question: _Why is this a terrible way to get user input?_
 
 
-###### 2. Get the computer's choice
+###### 2. Create two possibilities for responding to that prompt
 
 Assign a `Math.random()` method to the variable `computerChoice`:
 
@@ -222,7 +222,7 @@ Here we are setting a variable named ```computerChoice``` to the result of `Math
 
 Question: _How else can we get a random choice?_
 
-###### 3. Teach the computer rock, paper, scissors.
+###### 3. Connect everything to your HTML & CSS
 
 This is our first conditional statement. 
 
@@ -250,7 +250,8 @@ First we need to tell the computer how to decide who wins.
 In order to do that, we're going to need to create a function!
 
 
-###### 4. Compare the choices and tell the user of the result.
+###### 4. Test it out and see if it works
+
 Here we're creating a function called ```compare```. The ```compare``` function takes two
 arguments ```choice1``` and ```choice2```.
 
@@ -290,12 +291,12 @@ The function is called when someone clicks the button via the ```onclick``` attr
 <button class="button" onclick="compare(userChoice, computerChoice);">LETS PLAY RPS!</button>
 ```
 
-### Play around in the sandbox some more!
+### Play around in the sandbox!
 
-- "I want to play the game again. Make a button I can press to play again!"
-- "When I win, I want the game to congratulate me by my name!"
-- "I don't ever want to lose. Make it so I always win."
-- "I want the JavaScript code to work on other HTML files. How do I do this?"
+- "I want to create different choices instead!"
+- "I want to make it so that it's not case sensitive!"
+- "What if I used buttons instead of a input prompt?"
+- "I want the story to continue. How do I do that?"
 
 
 ## YOU DID IT, YOU'RE NOW A JAVASCRIPT CODER!
@@ -303,12 +304,10 @@ The function is called when someone clicks the button via the ```onclick``` attr
 Want to learn more? Visit one of our nearby **Learn to Code** sessions or check out our other tutorials:
 
 - [Learn to Code HTML & CSS](https://github.com/GalvanizeOpenSource/Learn-To-Code-HTML-CSS)
+- [Learn to Code JavaScript: Build a Simple Game](https://github.com/GalvanizeOpenSource/Learn-To-Code-JavaScript)
 - [Learn to Code Git and GitHub](https://github.com/GalvanizeOpenSource/Learn-To-Code-GitHub-Git)
 
-You can also check out our evening courses at [galvanize.com/workshops](http://galvanize.com/workshops):
-
-- **Zero to Web Designer in 8 Weeks**
-- **Foundations in JavaScript in 8 Weeks**
+You can also check out our evening courses at [galvanize.com/workshops](http://galvanize.com/workshops).
 
 If you're ready for a full-fledged immersive program, Galvanize offers the following:
 
