@@ -237,7 +237,7 @@ function goldOrPotion() {
       document.getElementById("intro").classList.toggle('hidden');
     } else if (response == 'DRINK POTION') {
       document.getElementById("potion").classList.toggle('hidden');
-      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
     } else { document.getElementById("error").innerHTML = "Sorry, I do not understand." }
 }
 ```
@@ -262,7 +262,7 @@ This will make one block of HTML appear and another block disappear, creating th
 ```javascript
     } else if (response == 'DRINK POTION') {
       document.getElementById("potion").classList.toggle('hidden');
-      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
 ```
 
 In the else if conditional scenario, the player typed 'DRINK POTION', then the 'intro' block would also disappear, but the 'potion' block would appear instead.
@@ -292,7 +292,7 @@ function goldOrPotion() {
       document.getElementById("intro").classList.toggle('hidden');
     } else if (response == 'DRINK POTION') {
       document.getElementById("potion").classList.toggle('hidden');
-      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
     } else { document.getElementById("error").innerHTML = "Sorry, I do not understand." }
 }
 ```
