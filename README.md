@@ -178,10 +178,11 @@ Time for us to make our *Choose Your Own Adventure* application (it's going to b
 
 1. Go to: https://github.com/GalvanizeOpenSource/Learn-To-Code-JavaScript-2/
 2. Download the zip file of our code
-3. Open the files in your text editor
+3. Open the files in your text editor as one whole folder
 	a. index.html
 	b. styles.css
   	c. custom.js
+	d. images/
 4. Open the index.html file in your web browser
 
 #### 4 Steps To Building This App
@@ -191,105 +192,111 @@ Time for us to make our *Choose Your Own Adventure* application (it's going to b
 3. Connect everything to your HTML & CSS!
 4. Test it out and see if it works
 
+##### 1. Start with an initial prompt
 
-###### 1. Start with an initial prompt
+We're already build one for you. The player needs to type in either 'TAKE GOLD' or 'DRINK POTION' to move onto the next phrase.
 
-**Assign a `prompt` method to the variable `userChoice`:**
-The ```prompt``` method gets input from the user, ```prompt``` has an optional message parameter which you can use to ask the user for a response.
-
-```javascript
-var userChoice = prompt("Do you choose rock, paper or scissors?");
-```
-
-This line creates a variable called ```userChoice``` to represent the users response.
-
-Question: _Why is this a terrible way to get user input?_
-
-
-###### 2. Create two possibilities for responding to that prompt
-
-Assign a `Math.random()` method to the variable `computerChoice`:
-
-What is `Math` in JavaScript?
-
-```Math.random()``` returns a random floating point number between 0 and 1.
+First thing we'll do is create a function that runs everything on click:
 
 ```javascript
-var computerChoice = Math.random();
-```
-
-Here we are setting a variable named ```computerChoice``` to the result of `Math.random()`.
-
-Question: _How else can we get a random choice?_
-
-###### 3. Connect everything to your HTML & CSS
-
-This is our first conditional statement. 
-
-We change the value of ```computerChoice```
-to either rock, paper, or scissors depending on what number the ```computerChoice```
-variable gets set to when we run the program. 
-
-Computers don't speak English (well, not exactly), so we need to speak in a language they understand: numbers.
-
-```javascript
-
-if (computerChoice <= 0.33) {
-    computerChoice = "rock";
-} else if (computerChoice <= 0.66) {
-    computerChoice = "paper";
-} else {
-    computerChoice = "scissors";
+function goldOrPotion() {
+	// code of the function goes in here
 }
 ```
 
-At this point the computer is ready to rumble with it's choice, and the user has made theirs. 
-
-**IT'S GO TIME!!! (Not so fast, bub.)**
-First we need to tell the computer how to decide who wins. 
-In order to do that, we're going to need to create a function!
-
-
-###### 4. Test it out and see if it works
-
-Here we're creating a function called ```compare```. The ```compare``` function takes two
-arguments ```choice1``` and ```choice2```.
+Next step: we need to create a new variable called `response` that captures whatever the player types into the input field. That information be will evaluated later on.
 
 ```javascript
-var compare = function(userChoice, computerChoice) {
-    if (userChoice  === computerChoice) {
-        window.alert("The result is a tie!");
-    } else if(userChoice === "rock") {
-        if (computerChoice === "scissors") {
-            window.alert("Rock wins!");
-        } else {
-            window.alert("Paper wins");
-        }
-    } else if(userChoice === "paper") {
-        if(computerChoice === "rock") {
-            window.alert("paper wins!");
-        } else {
-            window.alert("scissors wins!");
-        }
-    } else if(userChoice === "scissors") {
-        if (computerChoice === "rock") {
-            window.alert("Rock wins");
-        } else {
-            window.alert("scissors wins");
-        }
-    }
-};
+function goldOrPotion() {
+    var response = document.getElementById("response").value;
+    // more code to be typed in later on
+}
+```
+Let's understand what's happening here. This function retrieves the value in the web page associated with the ID 'response'. That value is stored in JavaScript for the next move. 
+
+So far, so good! *How can we check to see if this code worked?* 
+
+Let's move onto the next phase.
+
+##### 2. Create two possibilities for responding to that prompt
+
+Right now, there are three outcomes:
+
+-Player types (exactly) 'TAKE GOLD'
+-Player types (exactly) 'DRINK POTION'
+-Player types anything else
+
+We need to create an *if, else if, else* conditional that does something for all three options to indicate to the player that their interactions worked. Here's the full code below.
+
+```javascript
+function goldOrPotion() {
+    var response = document.getElementById("response").value;
+
+    if (response === 'TAKE GOLD') {
+      document.getElementById("gold").classList.toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
+    } else if (response == 'DRINK POTION') {
+      document.getElementById("potion").classList.toggle('hidden');
+      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+    } else { document.getElementById("error").innerHTML = "Sorry, I do not understand." }
+}
 ```
 
+Let's break it down:
 
-###### 4.5 Calling the compare function
-We're passing values of userChoice and computerChoice to run the equation. 
-
-The function is called when someone clicks the button via the ```onclick``` attribute!
-
-```html
-<button class="button" onclick="compare(userChoice, computerChoice);">LETS PLAY RPS!</button>
+```javascript
+    if (response === 'TAKE GOLD') {
+      document.getElementById("gold").classList.toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
 ```
+
+In other words, if the player typed 'TAKE GOLD', two things will happen:
+-JavaScript will find an element with the ID 'gold' in the HTML and change the current setting of class 'hidden'
+-JavaScript will find an element with the ID 'intro' in the HTML and channge the current setting of class 'hidden'
+
+The 'intro' block is by default not hidden from the player - you get to see that in the HTML
+The 'gold' block is by default hidden - the class 'hidden' and its attributes make it that way.
+
+This will make one block of HTML appear and another block disappear, creating the illusion that you're advancing in the story. 
+
+```javascript
+    } else if (response == 'DRINK POTION') {
+      document.getElementById("potion").classList.toggle('hidden');
+      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+```
+
+In the else if conditional scenario, the player typed 'DRINK POTION', then the 'intro' block would also disappear, but the 'potion' block would appear instead.
+
+```javascript
+    } else { document.getElementById("error").innerHTML = "Sorry, I do not understand." }
+```
+
+The else conditional scenario focuses on any other input that doesn't match the first posibilities. This adds a new value to the HTML page that says 'Sorry, I do not understand.' This last bit of code is helpful for knowing that the JavaScript does work, but it's looking for a particular answer.
+
+_Question: is there a way to write this code to maintain its functionality but be even neater? What about other entries or making them less concerned about case sensitivity?_
+
+##### 3. Connect everything to your HTML & CSS
+
+Your HTML and CSS should have everything already set: IDs, classes, etc. Check to make sure the IDs and classes in particular correspond to the code in the JavaScript file. 
+
+##### 4. Test it out and see if it works
+
+Here's one last overview of what should be in your JavaScript file.
+
+```javascript
+function goldOrPotion() {
+    var response = document.getElementById("response").value;
+
+    if (response === 'TAKE GOLD') {
+      document.getElementById("gold").classList.toggle('hidden');
+      document.getElementById("intro").classList.toggle('hidden');
+    } else if (response == 'DRINK POTION') {
+      document.getElementById("potion").classList.toggle('hidden');
+      document.getElementById("intro").classList.add('hidden').toggle('hidden');
+    } else { document.getElementById("error").innerHTML = "Sorry, I do not understand." }
+}
+```
+Click on the button. Did it work? If not, Inspect Element and see what went wrong.
 
 ### Play around in the sandbox!
 
